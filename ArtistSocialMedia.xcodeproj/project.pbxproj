@@ -140,12 +140,20 @@
 			isa = PBXGroup;
 			children = (
 				C62ECEB5253E05F9008F505E /* AuthenticationSession.swift */,
+				C62ECEC1253E1140008F505E /* DatabaseService */,
+			);
+			path = FirebaseServices;
+			sourceTree = "<group>";
+		};
+		C62ECEC1253E1140008F505E /* DatabaseService */ = {
+			isa = PBXGroup;
+			children = (
 				C62ECEB7253E0610008F505E /* DatabaseService.swift */,
 				C62ECEB9253E0626008F505E /* UserDatabaseSession.swift */,
 				C62ECEBB253E0637008F505E /* PostDatabaseSession.swift */,
 				C62ECEBD253E0673008F505E /* OpportunityDatabaseSession.swift */,
 			);
-			path = FirebaseServices;
+			path = DatabaseService;
 			sourceTree = "<group>";
 		};
 		C6AFB9B5252E354B00211710 = {

@@ -11,6 +11,7 @@ import UIKit
 struct User: Codable {
     let id: String
     let name: String
+    let email: String
     let username: String
     let location: String
     let portfolio: [Portfolio]
@@ -18,8 +19,9 @@ struct User: Codable {
     let bio: String
     let link1: String
     let link2: String
+    let isFollowing: Bool
 }
-struct Portfolio {
+struct Portfolio: Codable {
     let id: String
     let image: String
     let description: String
