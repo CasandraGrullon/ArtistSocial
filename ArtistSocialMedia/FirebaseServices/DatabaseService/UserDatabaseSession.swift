@@ -70,15 +70,4 @@ extension DatabaseService {
             }
         }
     }
-    //fetch user profile/portfolio
-    public func fetchUserPortfolio(userId: String, completion: @escaping (Result<Portfolio, Error>) -> ()) {
-        db.collection(DatabaseService.userCollection).document(userId).collection(DatabaseService.userPortfolioColloection).getDocuments { (snapshot, error) in
-            if let error = error {
-                completion(.failure(error))
-            } else if let snapshot = snapshot {
-                //let portfolio = snapshot.documents.map {Portfolio ($0.data())}
-                //completion(.success(portfolio))
-            }
-        }
-    }
 }

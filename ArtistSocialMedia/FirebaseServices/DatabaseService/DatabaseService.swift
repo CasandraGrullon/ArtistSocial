@@ -22,7 +22,7 @@ class DatabaseService {
     static let userSavedOpportunitiesCollection = "userSavedOpportunities"
     static let userSavedResourcesCollection = "userSavedResources"
     static let followedUsersCollection = "followedUsers"
-    static let userPortfolioColloection = "userPortfolio"
+    static let userPortfolioCollection = "userPortfolio"
     static let likedPostsCollection = "likedPosts"
     
     internal let db = Firestore.firestore()
