@@ -15,5 +15,14 @@ struct Post: Codable {
     let datePosted: Date
     let postText: String
     let postImage: String
-    let comments: [Post]
+}
+extension Post {
+    init (_ dictionary: [String: Any]) {
+        self.id = dictionary["id"] as? String ?? "no id"
+        self.userName = dictionary["userName"] as? String ?? "no username"
+        self.userProfilePicture = dictionary["userProfilePicture"] as? String ?? "no userProfilePicture"
+        self.datePosted = dictionary["datePosted"] as? Date ?? Date()
+        self.postText = dictionary["postText"] as? String ?? "no text"
+        self.postImage = dictionary["postImage"] as? String ?? "no image"
+    }
 }

@@ -132,9 +132,9 @@
 		C62ECEB3253E02F9008F505E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C62ECEAD253E02E2008F505E /* Post.swift */,
 				C62ECEAF253E02EA008F505E /* User.swift */,
 				C6A7069D25423D1B007B6CF2 /* Portfolio.swift */,
+				C62ECEAD253E02E2008F505E /* Post.swift */,
 				C62ECEB1253E02F5008F505E /* Opportunity.swift */,
 				C62ECEBF253E0E34008F505E /* Resource.swift */,
 			);
