@@ -18,5 +18,19 @@ struct Opportunity: Codable {
     let phoneNumber: String
     let link: String
     let datePosted: Date
-    let user: String
+    let userID: String
+}
+extension Opportunity {
+    init(_ dictionary: [String: Any]) {
+        self.id = dictionary["id"] as? String ?? "no id"
+        self.type = dictionary["type"] as? String ?? "no type"
+        self.title = dictionary["title"] as? String ?? "no title"
+        self.detail = dictionary["detail"] as? String ?? "no details"
+        self.location = dictionary["location"] as? String ?? "no location"
+        self.email = dictionary["email"] as? String ?? "no email"
+        self.phoneNumber = dictionary["phoneNumber"] as? String ?? "no phone number"
+        self.link = dictionary["link"] as? String ?? "no link"
+        self.datePosted = dictionary["datePosted"] as? Date ?? Date()
+        self.userID = dictionary["userID"] as? String ?? "no user id"
+    }
 }
