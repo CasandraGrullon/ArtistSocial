@@ -70,4 +70,16 @@ extension DatabaseService {
             }
         }
     }
+    //follow user
+    public func followUser(followedUser: User, completion: @escaping (Result<Bool, Error>) -> ()) {
+        guard let user = Auth.auth().currentUser else { return }
+        
+        db.collection(DatabaseService.userCollection).document(user.uid).collection(DatabaseService.followedUsersCollection).addDocument(data: ["id": followedUser.id, "name": followedUser.name, "email": followedUser.email, "username": followedUser.username, "location": followedUser.location, "profession": followedUser.profession]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
 }

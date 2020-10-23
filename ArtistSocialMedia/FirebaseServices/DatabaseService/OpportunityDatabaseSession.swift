@@ -61,4 +61,6 @@ extension DatabaseService {
     //add opportunity to collection -> user
     
     //remove opportunity from collection -> user
+    
+    //check if opportunity is in collection -> user
 }

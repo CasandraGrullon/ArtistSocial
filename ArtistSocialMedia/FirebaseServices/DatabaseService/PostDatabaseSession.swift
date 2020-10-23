@@ -48,7 +48,6 @@ extension DatabaseService {
             }
         }
     }
-    
     //delete a post
     public func deletePost(post: Post, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else { return }
@@ -61,4 +60,7 @@ extension DatabaseService {
             }
         }
     }
+    //like post
+    //unlike post
+    //is post liked
 }
