@@ -10,6 +10,9 @@
 		7207BFBDA5FDD648605D67B0 /* Pods_ArtistSocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC696735D879E35E1D3CB0F /* Pods_ArtistSocialMedia.framework */; };
 		7FCA44B00BDCA41C3105B806 /* Pods_ArtistSocialMediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D925BFB03BA5FBC5BA6B99 /* Pods_ArtistSocialMediaTests.framework */; };
 		C61781B12551CCF4001FA01A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61781B02551CCF4001FA01A /* Login.storyboard */; };
+		C61781B42551D9A7001FA01A /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B32551D9A7001FA01A /* ShowViewController.swift */; };
+		C61781B72551DA8F001FA01A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B62551DA8F001FA01A /* LoginViewController.swift */; };
+		C61781B92551DA9B001FA01A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B82551DA9B001FA01A /* SignUpViewController.swift */; };
 		C6276929252E465D003657A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6276928252E465D003657A1 /* GoogleService-Info.plist */; };
 		C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEA5253DFD2E008F505E /* PostCell.swift */; };
 		C62ECEA8253DFD41008F505E /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62ECEA7253DFD41008F505E /* PostCell.xib */; };
@@ -52,6 +55,9 @@
 		9DC696735D879E35E1D3CB0F /* Pods_ArtistSocialMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSocialMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4540826B4E5365364DD61 /* Pods-ArtistSocialMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSocialMedia.release.xcconfig"; path = "Target Support Files/Pods-ArtistSocialMedia/Pods-ArtistSocialMedia.release.xcconfig"; sourceTree = "<group>"; };
 		C61781B02551CCF4001FA01A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		C61781B32551D9A7001FA01A /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		C61781B62551DA8F001FA01A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C61781B82551DA9B001FA01A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C6276928252E465D003657A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C62ECEA5253DFD2E008F505E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C62ECEA7253DFD41008F505E /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
@@ -122,6 +128,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C61781B22551D983001FA01A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C61781B32551D9A7001FA01A /* ShowViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C61781B52551DA79001FA01A /* LoginViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C61781B62551DA8F001FA01A /* LoginViewController.swift */,
+				C61781B82551DA9B001FA01A /* SignUpViewController.swift */,
+			);
+			path = LoginViewControllers;
+			sourceTree = "<group>";
+		};
 		C62ECEA9253E0284008F505E /* PostCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,9 +212,11 @@
 			children = (
 				C6AFB9C1252E354B00211710 /* AppDelegate.swift */,
 				C6AFB9C3252E354B00211710 /* SceneDelegate.swift */,
+				C61781B22551D983001FA01A /* Extensions */,
 				C62ECEB4253E057C008F505E /* FirebaseServices */,
 				C62ECEB3253E02F9008F505E /* Models */,
-				C6AFB9E3252E425A00211710 /* ViewControllers */,
+				C61781B52551DA79001FA01A /* LoginViewControllers */,
+				C6AFB9E3252E425A00211710 /* MainAppViewControllers */,
 				C6AFB9C7252E354B00211710 /* Main.storyboard */,
 				C61781B02551CCF4001FA01A /* Login.storyboard */,
 				C6AFB9CA252E354C00211710 /* Assets.xcassets */,
@@ -212,12 +237,12 @@
 			path = ArtistSocialMediaTests;
 			sourceTree = "<group>";
 		};
-		C6AFB9E3252E425A00211710 /* ViewControllers */ = {
+		C6AFB9E3252E425A00211710 /* MainAppViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				C6AFB9E4252E42A600211710 /* Social */,
 			);
-			path = ViewControllers;
+			path = MainAppViewControllers;
 			sourceTree = "<group>";
 		};
 		C6AFB9E4252E42A600211710 /* Social */ = {
@@ -420,16 +445,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C61781B72551DA8F001FA01A /* LoginViewController.swift in Sources */,
 				C6A706A0254243C0007B6CF2 /* PortfolioDatabaseSession.swift in Sources */,
 				C62ECEAC253E02CE008F505E /* CreatePostViewController.swift in Sources */,
 				C62ECEB6253E05F9008F505E /* AuthenticationSession.swift in Sources */,
 				C62ECEB2253E02F5008F505E /* Opportunity.swift in Sources */,
 				C6AFB9C6252E354B00211710 /* HomeFeedViewController.swift in Sources */,
 				C6AFB9C2252E354B00211710 /* AppDelegate.swift in Sources */,
+				C61781B92551DA9B001FA01A /* SignUpViewController.swift in Sources */,
 				C62ECEAE253E02E2008F505E /* Post.swift in Sources */,
 				C62ECEB8253E0610008F505E /* DatabaseService.swift in Sources */,
 				C62ECEBE253E0673008F505E /* OpportunityDatabaseSession.swift in Sources */,
 				C62ECEBC253E0637008F505E /* PostDatabaseSession.swift in Sources */,
+				C61781B42551D9A7001FA01A /* ShowViewController.swift in Sources */,
 				C6A7069E25423D1B007B6CF2 /* Portfolio.swift in Sources */,
 				C6AFB9C4252E354B00211710 /* SceneDelegate.swift in Sources */,
 				C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */,
