@@ -145,6 +145,24 @@
 			path = LoginViewControllers;
 			sourceTree = "<group>";
 		};
+		C61781BA2551DAC7001FA01A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C61781B52551DA79001FA01A /* LoginViewControllers */,
+				C6AFB9E3252E425A00211710 /* MainAppViewControllers */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C61781BB2551DB56001FA01A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C6AFB9C7252E354B00211710 /* Main.storyboard */,
+				C61781B02551CCF4001FA01A /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		C62ECEA9253E0284008F505E /* PostCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,10 +233,8 @@
 				C61781B22551D983001FA01A /* Extensions */,
 				C62ECEB4253E057C008F505E /* FirebaseServices */,
 				C62ECEB3253E02F9008F505E /* Models */,
-				C61781B52551DA79001FA01A /* LoginViewControllers */,
-				C6AFB9E3252E425A00211710 /* MainAppViewControllers */,
-				C6AFB9C7252E354B00211710 /* Main.storyboard */,
-				C61781B02551CCF4001FA01A /* Login.storyboard */,
+				C61781BA2551DAC7001FA01A /* ViewControllers */,
+				C61781BB2551DB56001FA01A /* Storyboards */,
 				C6AFB9CA252E354C00211710 /* Assets.xcassets */,
 				C6AFB9CC252E354C00211710 /* LaunchScreen.storyboard */,
 				C6AFB9CF252E354C00211710 /* Info.plist */,
