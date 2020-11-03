@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7207BFBDA5FDD648605D67B0 /* Pods_ArtistSocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC696735D879E35E1D3CB0F /* Pods_ArtistSocialMedia.framework */; };
 		7FCA44B00BDCA41C3105B806 /* Pods_ArtistSocialMediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D925BFB03BA5FBC5BA6B99 /* Pods_ArtistSocialMediaTests.framework */; };
+		C61781B12551CCF4001FA01A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61781B02551CCF4001FA01A /* Login.storyboard */; };
 		C6276929252E465D003657A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6276928252E465D003657A1 /* GoogleService-Info.plist */; };
 		C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEA5253DFD2E008F505E /* PostCell.swift */; };
 		C62ECEA8253DFD41008F505E /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62ECEA7253DFD41008F505E /* PostCell.xib */; };
@@ -50,6 +51,7 @@
 		94D925BFB03BA5FBC5BA6B99 /* Pods_ArtistSocialMediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSocialMediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DC696735D879E35E1D3CB0F /* Pods_ArtistSocialMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtistSocialMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2A4540826B4E5365364DD61 /* Pods-ArtistSocialMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSocialMedia.release.xcconfig"; path = "Target Support Files/Pods-ArtistSocialMedia/Pods-ArtistSocialMedia.release.xcconfig"; sourceTree = "<group>"; };
+		C61781B02551CCF4001FA01A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C6276928252E465D003657A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C62ECEA5253DFD2E008F505E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C62ECEA7253DFD41008F505E /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				C62ECEB3253E02F9008F505E /* Models */,
 				C6AFB9E3252E425A00211710 /* ViewControllers */,
 				C6AFB9C7252E354B00211710 /* Main.storyboard */,
+				C61781B02551CCF4001FA01A /* Login.storyboard */,
 				C6AFB9CA252E354C00211710 /* Assets.xcassets */,
 				C6AFB9CC252E354C00211710 /* LaunchScreen.storyboard */,
 				C6AFB9CF252E354C00211710 /* Info.plist */,
@@ -314,6 +317,7 @@
 			files = (
 				C6AFB9CE252E354C00211710 /* LaunchScreen.storyboard in Resources */,
 				C6276929252E465D003657A1 /* GoogleService-Info.plist in Resources */,
+				C61781B12551CCF4001FA01A /* Login.storyboard in Resources */,
 				C62ECEA8253DFD41008F505E /* PostCell.xib in Resources */,
 				C6AFB9CB252E354C00211710 /* Assets.xcassets in Resources */,
 				C6AFB9C9252E354B00211710 /* Main.storyboard in Resources */,

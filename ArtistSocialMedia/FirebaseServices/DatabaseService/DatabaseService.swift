@@ -13,6 +13,7 @@ class DatabaseService {
     public static let shared = DatabaseService()
     private init() {}
     
+    //collections
     static let userCollection = "users"
     static let postsCollection = "posts"
     static let opportunitiesCollection = "opportunities"
