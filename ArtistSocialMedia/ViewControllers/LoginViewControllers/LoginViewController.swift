@@ -19,14 +19,23 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordPrompt: UILabel!
     
+    @IBOutlet weak var thirdPartySignUpPrompt: UILabel!
+    @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var signUpPrompt: UILabel!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    //Manipulatable constraints
+    @IBOutlet weak var textfieldStackHeight: NSLayoutConstraint!
+    @IBOutlet weak var logoImageTopAnchor: NSLayoutConstraint!
     
     private var accountState: AccountState = .existingUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginUI()
         configureTextFields()
         configureNavBar()
     }
@@ -79,14 +88,30 @@ class LoginViewController: UIViewController {
     @IBAction func signUpButtonPressed(_ sender: UIButton) {
         accountState = accountState == .existingUser ? .newUser : .existingUser
         if accountState == .existingUser {
-            loginButton.setTitle("Login", for: .normal)
-            signUpPrompt.text = "Don't have an account?"
-            signUpButton.setTitle("Sign Up", for: .normal)
+            loginUI()
         } else {
-            loginButton.setTitle("Create Account", for: .normal)
-            signUpPrompt.text = "Already have an account?"
-            signUpButton.setTitle("Log In", for: .normal)
+            signUpUI()
         }
+    }
+    private func loginUI() {
+        pageLabel.text = "Welcome back!"
+        thirdPartySignUpPrompt.text = "- or log in with -"
+        loginButton.setTitle("Login", for: .normal)
+        signUpPrompt.text = "Don't have an account?"
+        signUpButton.setTitle("Sign Up", for: .normal)
+        
+        confirmPasswordPrompt.isHidden = true
+        confirmPasswordTextField.isHidden = true
+    }
+    private func signUpUI() {
+        pageLabel.text = "Create an account"
+        thirdPartySignUpPrompt.text = "- or sign up with -"
+        loginButton.setTitle("Create Account", for: .normal)
+        signUpPrompt.text = "Already have an account?"
+        signUpButton.setTitle("Log In", for: .normal)
+        
+        confirmPasswordPrompt.isHidden = false
+        confirmPasswordTextField.isHidden = false
     }
 }
 extension LoginViewController: UITextFieldDelegate {
