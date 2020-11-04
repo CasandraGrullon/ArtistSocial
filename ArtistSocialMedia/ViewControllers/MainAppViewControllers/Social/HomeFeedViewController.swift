@@ -18,11 +18,25 @@ class HomeFeedViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+    private var searchOn = false {
+        didSet {
+            configureSearchBar()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
         fetchFollowedUsers()
+    }
+    private func configureSearchBar() {
+        if searchOn {
+            navigationItem.searchController?.isActive = true
+            navigationItem.searchController?.searchBar.isHidden = false
+        } else {
+            navigationItem.searchController?.isActive = false
+            navigationItem.searchController?.searchBar.isHidden = true
+        }
     }
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: PostCell.reuseIdentifier)
@@ -32,6 +46,8 @@ class HomeFeedViewController: UIViewController {
     
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
         //search controller appears or is hidden
+        searchOn = searchOn == false ? true : false
+        //accountState = accountState == .existingUser ? .newUser : .existingUser
     }
     
     @IBAction func addPostButtonPressed(_ sender: UIButton) {
