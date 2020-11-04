@@ -20,7 +20,7 @@ class HomeFeedViewController: UIViewController {
     }
     private var searchOn = false {
         didSet {
-            configureSearchBar()
+            configureSearchController()
         }
     }
     
@@ -29,7 +29,7 @@ class HomeFeedViewController: UIViewController {
         configureCollectionView()
         fetchFollowedUsers()
     }
-    private func configureSearchBar() {
+    private func configureSearchController() {
         if searchOn {
             navigationItem.searchController?.isActive = true
             navigationItem.searchController?.searchBar.isHidden = false
@@ -40,8 +40,8 @@ class HomeFeedViewController: UIViewController {
     }
     private func configureCollectionView() {
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: PostCell.reuseIdentifier)
-        //collectionView.delegate = self
-        //collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
@@ -69,3 +69,34 @@ class HomeFeedViewController: UIViewController {
     }
 }
 
+//MARK:- CollectionView extensions
+extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let maxWidth = view.frame.width
+        let maxHeight = view.frame.height
+        let adjustedWidth = CGFloat(maxWidth * 0.3)
+        let adjustedHeight = CGFloat(maxHeight / 6)
+        return CGSize(width: adjustedWidth, height: adjustedHeight)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+}
+extension HomeFeedViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        var allPosts = [Post]()
+//        for user in followedUsers {
+//            allPosts.append(user.)
+//        }
+        //TODO: refactor to return recent posts of followed users
+        return followedUsers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell else {
+            fatalError("Could not dequeue cell")
+        }
+        //TODO: based on the followed users, posts are populated
+        return cell
+    }
+}
