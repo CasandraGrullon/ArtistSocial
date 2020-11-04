@@ -36,6 +36,7 @@
 		C6AFB9CE252E354C00211710 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6AFB9CC252E354C00211710 /* LaunchScreen.storyboard */; };
 		C6AFB9D9252E354D00211710 /* ArtistSocialMediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFB9D8252E354D00211710 /* ArtistSocialMediaTests.swift */; };
 		C6AFB9E8252E45FE00211710 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6AFB9E7252E45FE00211710 /* GoogleService-Info.plist */; };
+		C6BEB6C32551E04700576EED /* ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BEB6C22551E04700576EED /* ShowAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		C6AFB9D8252E354D00211710 /* ArtistSocialMediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistSocialMediaTests.swift; sourceTree = "<group>"; };
 		C6AFB9DA252E354D00211710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6AFB9E7252E45FE00211710 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C6BEB6C22551E04700576EED /* ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAlert.swift; sourceTree = "<group>"; };
 		D8D51446982E421660402AE4 /* Pods-ArtistSocialMediaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtistSocialMediaTests.release.xcconfig"; path = "Target Support Files/Pods-ArtistSocialMediaTests/Pods-ArtistSocialMediaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C61781B32551D9A7001FA01A /* ShowViewController.swift */,
+				C6BEB6C22551E04700576EED /* ShowAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				C61781B42551D9A7001FA01A /* ShowViewController.swift in Sources */,
 				C6A7069E25423D1B007B6CF2 /* Portfolio.swift in Sources */,
 				C6AFB9C4252E354B00211710 /* SceneDelegate.swift in Sources */,
+				C6BEB6C32551E04700576EED /* ShowAlert.swift in Sources */,
 				C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */,
 				C62ECEB0253E02EA008F505E /* User.swift in Sources */,
 				C62ECEBA253E0626008F505E /* UserDatabaseSession.swift in Sources */,

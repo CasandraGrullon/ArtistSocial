@@ -12,11 +12,11 @@ import FirebaseFirestore
 
 extension DatabaseService {
     //create database user
-    public func createDatabaseUser(authDataResult: AuthDataResult, username: String, name: String, completion: @escaping (Result<Bool, Error>)-> ()) {
+    public func createAppUser(authDataResult: AuthDataResult, completion: @escaping (Result<Bool, Error>)-> ()) {
         guard let email = authDataResult.user.email else {
             return
         }
-        db.collection(DatabaseService.userCollection).document(authDataResult.user.uid).setData(["email": email, "id": authDataResult.user.uid, "username": username, "name": name]) { error in
+        db.collection(DatabaseService.userCollection).document(authDataResult.user.uid).setData(["email": email, "id": authDataResult.user.uid]) { error in
             if let error = error {
                 completion(.failure(error))
             } else {
