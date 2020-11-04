@@ -100,6 +100,8 @@ class LoginViewController: UIViewController {
         signUpPrompt.text = "Don't have an account?"
         signUpButton.setTitle("Sign Up", for: .normal)
         
+        textfieldStackHeight.constant = 180 - (180 * 0.33)
+        
         confirmPasswordPrompt.isHidden = true
         confirmPasswordTextField.isHidden = true
     }
@@ -109,6 +111,8 @@ class LoginViewController: UIViewController {
         loginButton.setTitle("Create Account", for: .normal)
         signUpPrompt.text = "Already have an account?"
         signUpButton.setTitle("Log In", for: .normal)
+        
+        textfieldStackHeight.constant = 180
         
         confirmPasswordPrompt.isHidden = false
         confirmPasswordTextField.isHidden = false
