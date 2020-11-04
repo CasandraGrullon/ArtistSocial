@@ -12,7 +12,6 @@
 		C61781B12551CCF4001FA01A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C61781B02551CCF4001FA01A /* Login.storyboard */; };
 		C61781B42551D9A7001FA01A /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B32551D9A7001FA01A /* ShowViewController.swift */; };
 		C61781B72551DA8F001FA01A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B62551DA8F001FA01A /* LoginViewController.swift */; };
-		C61781B92551DA9B001FA01A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C61781B82551DA9B001FA01A /* SignUpViewController.swift */; };
 		C6276929252E465D003657A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6276928252E465D003657A1 /* GoogleService-Info.plist */; };
 		C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEA5253DFD2E008F505E /* PostCell.swift */; };
 		C62ECEA8253DFD41008F505E /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C62ECEA7253DFD41008F505E /* PostCell.xib */; };
@@ -58,7 +57,6 @@
 		C61781B02551CCF4001FA01A /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		C61781B32551D9A7001FA01A /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 		C61781B62551DA8F001FA01A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C61781B82551DA9B001FA01A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		C6276928252E465D003657A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C62ECEA5253DFD2E008F505E /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		C62ECEA7253DFD41008F505E /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
@@ -143,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				C61781B62551DA8F001FA01A /* LoginViewController.swift */,
-				C61781B82551DA9B001FA01A /* SignUpViewController.swift */,
 			);
 			path = LoginViewControllers;
 			sourceTree = "<group>";
@@ -471,7 +468,6 @@
 				C62ECEB2253E02F5008F505E /* Opportunity.swift in Sources */,
 				C6AFB9C6252E354B00211710 /* HomeFeedViewController.swift in Sources */,
 				C6AFB9C2252E354B00211710 /* AppDelegate.swift in Sources */,
-				C61781B92551DA9B001FA01A /* SignUpViewController.swift in Sources */,
 				C62ECEAE253E02E2008F505E /* Post.swift in Sources */,
 				C62ECEB8253E0610008F505E /* DatabaseService.swift in Sources */,
 				C62ECEBE253E0673008F505E /* OpportunityDatabaseSession.swift in Sources */,
