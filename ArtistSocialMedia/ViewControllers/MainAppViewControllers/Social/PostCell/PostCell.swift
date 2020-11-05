@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostCell: UICollectionViewCell {
     //user details
@@ -22,8 +23,28 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var shareButton: UIButton!
     
     public static let reuseIdentifier = "postCell"
-    //TODO: configure cell populated with Post object details
+    
+    override func layoutSubviews() {
+        self.backgroundColor = .systemBackground
+        self.userProfileImage.layer.cornerRadius = userProfileImage.bounds.width / 2
+    }
+    
     public func configureCell(post: Post) {
+        userNameLabel.text = post.userName
+        
+        if post.userProfilePicture != "" {
+            userProfileImage.kf.setImage(with: URL(string: post.userProfilePicture))
+        } else {
+            userProfileImage.backgroundColor = .systemPink
+        }
+        
+        if post.postText != "" {
+            postTextLabel.text = post.postText
+        }
+        
+        if post.postImage != "" {
+            //TODO:- Kingfisher
+        }
         
     }
     

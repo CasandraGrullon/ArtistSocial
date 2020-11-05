@@ -48,6 +48,7 @@ class HomeFeedViewController: UIViewController {
         }
     }
     private func configureCollectionView() {
+        collectionView.backgroundColor = .secondarySystemBackground
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: PostCell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -97,26 +98,26 @@ extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxWidth = view.frame.width
         let maxHeight = view.frame.height
-        let adjustedWidth = CGFloat(maxWidth * 0.3)
-        let adjustedHeight = CGFloat(maxHeight / 6)
+        let adjustedWidth = CGFloat(maxWidth * 0.95)
+        let adjustedHeight = CGFloat(maxHeight * 0.4)
         return CGSize(width: adjustedWidth, height: adjustedHeight)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
     }
 }
 extension HomeFeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(posts.count)
-        return posts.count //should be 1
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell else {
             fatalError("Could not dequeue cell")
         }
-        //TODO: based on the followed users, posts are populated
-        cell.backgroundColor = .purple
+        //TODO:- configure cell, cell delegate (unfollow user/ edit own post)
+        let post = posts[indexPath.row]
+        cell.configureCell(post: post)
         return cell
     }
 }
