@@ -10,6 +10,7 @@ import UIKit
 
 struct Post: Codable {
     let id: String
+    let userId: String
     let userName: String
     let userProfilePicture: String
     let datePosted: Date
@@ -19,6 +20,7 @@ struct Post: Codable {
 extension Post {
     init (_ dictionary: [String: Any]) {
         self.id = dictionary["id"] as? String ?? "no id"
+        self.userId = dictionary["userId"] as? String ?? "no user id"
         self.userName = dictionary["userName"] as? String ?? "no username"
         self.userProfilePicture = dictionary["userProfilePicture"] as? String ?? "no userProfilePicture"
         self.datePosted = dictionary["datePosted"] as? Date ?? Date()

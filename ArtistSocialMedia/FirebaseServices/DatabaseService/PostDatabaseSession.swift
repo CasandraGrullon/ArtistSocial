@@ -28,7 +28,7 @@ extension DatabaseService {
     public func createPost(postText: String? = nil, postImage: String? = nil, completion: @escaping (Result<Bool, Error>) -> ()) {
         guard let user = Auth.auth().currentUser else { return }
         
-        db.collection(DatabaseService.userCollection).document(user.uid).collection(DatabaseService.postsCollection).addDocument(data: ["postText": postText ?? "", "postImage": postImage ?? ""]) { (error) in
+        db.collection(DatabaseService.userCollection).document(user.uid).collection(DatabaseService.postsCollection).addDocument(data: ["userId": user.uid, "postText": postText ?? "", "postImage": postImage ?? ""]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

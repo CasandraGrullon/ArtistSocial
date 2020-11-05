@@ -25,6 +25,7 @@ class HomeFeedViewController: UIViewController {
         }
     }
     private var posts = [Post]()
+    
     private var searchOn = false {
         didSet {
             configureSearchController()
