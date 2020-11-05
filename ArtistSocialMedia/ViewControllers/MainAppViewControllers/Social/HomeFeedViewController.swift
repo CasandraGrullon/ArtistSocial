@@ -13,6 +13,7 @@ class HomeFeedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPostButton: UIButton!
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    private var searchController = UISearchController(searchResultsController: nil)
     
     private var followedUsers = [User]()
     private var posts = [Post]() {
@@ -26,27 +27,30 @@ class HomeFeedViewController: UIViewController {
             }
         }
     }
-    
-    private var searchOn = false {
+    private var searchOn = false
+    private var searchText = String() {
         didSet {
-            configureSearchController()
+            //fetch users
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchBar.isHidden = true
+        configureSearchController()
         configureCollectionView()
         fetchFollowedUsers()
     }
     //MARK:- Configure properties
     private func configureSearchController() {
-        if searchOn {
-            navigationItem.searchController?.isActive = true
-            navigationItem.searchController?.searchBar.isHidden = false
-        } else {
-            navigationItem.searchController?.isActive = false
-            navigationItem.searchController?.searchBar.isHidden = true
-        }
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = true
+        searchController.obscuresBackgroundDuringPresentation = true
+        searchController.searchBar.placeholder = "search for users"
+        searchController.searchBar.autocapitalizationType = .none
     }
     private func configureCollectionView() {
         collectionView.backgroundColor = .secondarySystemBackground
@@ -54,13 +58,13 @@ class HomeFeedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-//        if let flowLayout = flowLayout,
-//           let collectionView = collectionView {
-//            print("flowlayout")
-//            let width = collectionView.frame.width
-//            let height = collectionView.frame.height * 0.2
-//            flowLayout.estimatedItemSize = CGSize(width: width, height: height)
-//        }
+        //        if let flowLayout = flowLayout,
+        //           let collectionView = collectionView {
+        //            print("flowlayout")
+        //            let width = collectionView.frame.width
+        //            let height = collectionView.frame.height * 0.2
+        //            flowLayout.estimatedItemSize = CGSize(width: width, height: height)
+        //        }
     }
     //MARK:- Network calls
     //Fetch followed users
@@ -95,9 +99,9 @@ class HomeFeedViewController: UIViewController {
     }
     //MARK:- Button Actions
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
-        //search controller appears or is hidden
+        //accountState = accountState == .existingUser ? .newUser : .existingUser
         searchOn = searchOn == false ? true : false
-        configureSearchController()
+        searchController.searchBar.isHidden = searchOn
     }
     @IBAction func addPostButtonPressed(_ sender: UIButton) {
         //go to add post view
@@ -108,7 +112,7 @@ extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let maxWidth = collectionView.frame.width
         let maxHeight = collectionView.frame.height
-        let adjustedWidth = CGFloat(maxWidth)
+        let adjustedWidth = CGFloat(maxWidth * 0.95)
         let adjustedHeight = CGFloat(maxHeight * 0.3)
         return CGSize(width: adjustedWidth, height: adjustedHeight)
         
@@ -130,5 +134,19 @@ extension HomeFeedViewController: UICollectionViewDataSource {
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
         return cell
+    }
+}
+//MARK:- Search Controller Delegate Extensions
+extension HomeFeedViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text, !text.isEmpty else {
+            return
+        }
+        searchText = text
+    }
+}
+extension HomeFeedViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        navigationItem.searchController = nil
     }
 }

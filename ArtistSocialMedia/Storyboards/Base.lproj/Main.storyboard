@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home-->
+        <!--Home Feed View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeFeedViewController" customModule="ArtistSocialMedia" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                             <constraint firstItem="DiA-jd-Eut" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wQG-W7-psq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="m9z-23-8nq">
+                    <navigationItem key="navigationItem" id="m9z-23-8nq">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="person.crop.circle" catalog="system" id="UJm-7h-Nse"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="cwc-Cz-49g">
                             <connections>
