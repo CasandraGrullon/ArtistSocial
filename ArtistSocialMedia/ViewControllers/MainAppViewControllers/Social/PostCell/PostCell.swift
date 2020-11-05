@@ -44,7 +44,11 @@ class PostCell: UICollectionViewCell {
         
         if post.postImage != "" {
             postImage.isHidden = false
-            postImage.kf.setImage(with: URL(string: post.postImage))
+            print(post.postImage)
+            guard let url = URL(string: post.postImage) else {
+                return
+            }
+            postImage.kf.setImage(with: url)
         } else {
             postImage.isHidden = true
         }

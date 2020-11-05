@@ -63,7 +63,7 @@
                             <constraint firstAttribute="height" constant="44" id="2Tl-gw-eah"/>
                         </constraints>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-tY-AyW">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-tY-AyW">
                         <rect key="frame" x="122.5" y="92.5" width="606.5" height="156.5"/>
                     </imageView>
                 </subviews>
