@@ -13,18 +13,18 @@ class HomeFeedViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPostButton: UIButton!
     
-    private var followedUsers = [User]() {
+    private var followedUsers = [User]()
+    private var posts = [Post]() {
         didSet {
             collectionView.reloadData()
-            if self.posts.isEmpty {
-                self.collectionView.backgroundView = EmptyView(title: "No Posts!", message: "Follow other users to see what they're posting")
-            } else {
-                self.collectionView.reloadData()
-                self.collectionView.backgroundView = nil
-            }
+//            if self.posts.isEmpty {
+//                self.collectionView.backgroundView = EmptyView(title: "No Posts!", message: "Follow other users to see what they're posting")
+//            } else {
+//                self.collectionView.reloadData()
+//                self.collectionView.backgroundView = nil
+//            }
         }
     }
-    private var posts = [Post]()
     
     private var searchOn = false {
         didSet {
@@ -37,6 +37,7 @@ class HomeFeedViewController: UIViewController {
         configureCollectionView()
         fetchFollowedUsers()
     }
+    //MARK:- Configure properties
     private func configureSearchController() {
         if searchOn {
             navigationItem.searchController?.isActive = true
@@ -51,15 +52,7 @@ class HomeFeedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
-        //search controller appears or is hidden
-        searchOn = searchOn == false ? true : false
-        //accountState = accountState == .existingUser ? .newUser : .existingUser
-    }
-    
-    @IBAction func addPostButtonPressed(_ sender: UIButton) {
-        //go to add post view
-    }
+    //MARK:- Network calls
     //Fetch followed users
     private func fetchFollowedUsers() {
         DatabaseService.shared.fetchFollowedUsers { [weak self] (result) in
@@ -85,13 +78,20 @@ class HomeFeedViewController: UIViewController {
                 print(error)
             case .success(let posts):
                 DispatchQueue.main.async {
-                    self?.posts = posts.filter {$0.datePosted == Date()}
+                    self?.posts = posts//.filter {$0.datePosted == Date()}
                 }
             }
         }
     }
+    //MARK:- Button Actions
+    @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
+        //search controller appears or is hidden
+        searchOn = searchOn == false ? true : false
+    }
+    @IBAction func addPostButtonPressed(_ sender: UIButton) {
+        //go to add post view
+    }
 }
-
 //MARK:- CollectionView extensions
 extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -107,7 +107,8 @@ extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
 }
 extension HomeFeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posts.count
+        print(posts.count)
+        return posts.count //should be 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,6 +116,7 @@ extension HomeFeedViewController: UICollectionViewDataSource {
             fatalError("Could not dequeue cell")
         }
         //TODO: based on the followed users, posts are populated
+        cell.backgroundColor = .purple
         return cell
     }
 }
