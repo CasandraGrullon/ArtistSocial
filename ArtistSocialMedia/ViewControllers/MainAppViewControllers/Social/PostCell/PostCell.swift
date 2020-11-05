@@ -43,7 +43,10 @@ class PostCell: UICollectionViewCell {
         }
         
         if post.postImage != "" {
-            //TODO:- Kingfisher
+            postImage.isHidden = false
+            postImage.kf.setImage(with: URL(string: post.postImage))
+        } else {
+            postImage.isHidden = true
         }
         
     }

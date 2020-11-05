@@ -72,6 +72,7 @@
                     <connections>
                         <outlet property="addPostButton" destination="8Bd-hY-P6c" id="cMq-Sj-dE1"/>
                         <outlet property="collectionView" destination="DiA-jd-Eut" id="rLQ-G3-myS"/>
+                        <outlet property="flowLayout" destination="b22-8h-obL" id="pfh-sy-hC6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

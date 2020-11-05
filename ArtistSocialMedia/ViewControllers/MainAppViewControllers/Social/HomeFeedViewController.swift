@@ -12,17 +12,18 @@ class HomeFeedViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addPostButton: UIButton!
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     private var followedUsers = [User]()
     private var posts = [Post]() {
         didSet {
             collectionView.reloadData()
-//            if self.posts.isEmpty {
-//                self.collectionView.backgroundView = EmptyView(title: "No Posts!", message: "Follow other users to see what they're posting")
-//            } else {
-//                self.collectionView.reloadData()
-//                self.collectionView.backgroundView = nil
-//            }
+            if self.posts.isEmpty {
+                self.collectionView.backgroundView = EmptyView(title: "No Posts!", message: "Follow other users to see what they're posting")
+            } else {
+                self.collectionView.reloadData()
+                self.collectionView.backgroundView = nil
+            }
         }
     }
     
@@ -52,6 +53,14 @@ class HomeFeedViewController: UIViewController {
         collectionView.register(UINib(nibName: "PostCell", bundle: nil), forCellWithReuseIdentifier: PostCell.reuseIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+//        if let flowLayout = flowLayout,
+//           let collectionView = collectionView {
+//            print("flowlayout")
+//            let width = collectionView.frame.width
+//            let height = collectionView.frame.height * 0.2
+//            flowLayout.estimatedItemSize = CGSize(width: width, height: height)
+//        }
     }
     //MARK:- Network calls
     //Fetch followed users
@@ -88,6 +97,7 @@ class HomeFeedViewController: UIViewController {
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
         //search controller appears or is hidden
         searchOn = searchOn == false ? true : false
+        configureSearchController()
     }
     @IBAction func addPostButtonPressed(_ sender: UIButton) {
         //go to add post view
@@ -96,11 +106,12 @@ class HomeFeedViewController: UIViewController {
 //MARK:- CollectionView extensions
 extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let maxWidth = view.frame.width
-        let maxHeight = view.frame.height
-        let adjustedWidth = CGFloat(maxWidth * 0.95)
-        let adjustedHeight = CGFloat(maxHeight * 0.4)
+        let maxWidth = collectionView.frame.width
+        let maxHeight = collectionView.frame.height
+        let adjustedWidth = CGFloat(maxWidth)
+        let adjustedHeight = CGFloat(maxHeight * 0.3)
         return CGSize(width: adjustedWidth, height: adjustedHeight)
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
@@ -115,7 +126,7 @@ extension HomeFeedViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCell.reuseIdentifier, for: indexPath) as? PostCell else {
             fatalError("Could not dequeue cell")
         }
-        //TODO:- configure cell, cell delegate (unfollow user/ edit own post)
+        //TODO:- cell delegate (unfollow user/ edit own post)
         let post = posts[indexPath.row]
         cell.configureCell(post: post)
         return cell
