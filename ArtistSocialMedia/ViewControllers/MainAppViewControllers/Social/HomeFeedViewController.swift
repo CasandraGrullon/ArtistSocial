@@ -16,8 +16,15 @@ class HomeFeedViewController: UIViewController {
     private var followedUsers = [User]() {
         didSet {
             collectionView.reloadData()
+            if self.posts.isEmpty {
+                self.collectionView.backgroundView = EmptyView(title: "No Posts!", message: "Follow other users to see what they're posting")
+            } else {
+                self.collectionView.reloadData()
+                self.collectionView.backgroundView = nil
+            }
         }
     }
+    private var posts = [Post]()
     private var searchOn = false {
         didSet {
             configureSearchController()
@@ -43,7 +50,6 @@ class HomeFeedViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-    
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
         //search controller appears or is hidden
         searchOn = searchOn == false ? true : false
@@ -63,6 +69,22 @@ class HomeFeedViewController: UIViewController {
             case .success(let users):
                 DispatchQueue.main.async {
                     self?.followedUsers = users
+                    for user in users {
+                        self?.fetchPosts(for: user)
+                    }
+                }
+            }
+        }
+    }
+    //Fetch followed users' posts
+    private func fetchPosts(for user: User) {
+        DatabaseService.shared.fetchPosts(followedUser: user) { [weak self] (result) in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let posts):
+                DispatchQueue.main.async {
+                    self?.posts = posts.filter {$0.datePosted == Date()}
                 }
             }
         }
@@ -84,12 +106,7 @@ extension HomeFeedViewController: UICollectionViewDelegateFlowLayout {
 }
 extension HomeFeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        var allPosts = [Post]()
-//        for user in followedUsers {
-//            allPosts.append(user.)
-//        }
-        //TODO: refactor to return recent posts of followed users
-        return followedUsers.count
+        return posts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

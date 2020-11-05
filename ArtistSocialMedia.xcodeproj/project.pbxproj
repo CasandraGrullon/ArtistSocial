@@ -25,6 +25,7 @@
 		C62ECEBC253E0637008F505E /* PostDatabaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEBB253E0637008F505E /* PostDatabaseSession.swift */; };
 		C62ECEBE253E0673008F505E /* OpportunityDatabaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEBD253E0673008F505E /* OpportunityDatabaseSession.swift */; };
 		C62ECEC0253E0E34008F505E /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62ECEBF253E0E34008F505E /* Resource.swift */; };
+		C6633803255377A7008AFBCF /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6633802255377A7008AFBCF /* EmptyView.swift */; };
 		C6A7069E25423D1B007B6CF2 /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A7069D25423D1B007B6CF2 /* Portfolio.swift */; };
 		C6A706A0254243C0007B6CF2 /* PortfolioDatabaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A7069F254243C0007B6CF2 /* PortfolioDatabaseSession.swift */; };
 		C6AFB9C2252E354B00211710 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6AFB9C1252E354B00211710 /* AppDelegate.swift */; };
@@ -70,6 +71,7 @@
 		C62ECEBB253E0637008F505E /* PostDatabaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDatabaseSession.swift; sourceTree = "<group>"; };
 		C62ECEBD253E0673008F505E /* OpportunityDatabaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpportunityDatabaseSession.swift; sourceTree = "<group>"; };
 		C62ECEBF253E0E34008F505E /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		C6633802255377A7008AFBCF /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		C6A7069D25423D1B007B6CF2 /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		C6A7069F254243C0007B6CF2 /* PortfolioDatabaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioDatabaseSession.swift; sourceTree = "<group>"; };
 		C6AFB9BE252E354B00211710 /* ArtistSocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtistSocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -205,6 +207,23 @@
 			path = DatabaseService;
 			sourceTree = "<group>";
 		};
+		C663380125537789008AFBCF /* AdditonalFiles */ = {
+			isa = PBXGroup;
+			children = (
+				C61781B22551D983001FA01A /* Extensions */,
+				C6633808255377B0008AFBCF /* Views */,
+			);
+			path = AdditonalFiles;
+			sourceTree = "<group>";
+		};
+		C6633808255377B0008AFBCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6633802255377A7008AFBCF /* EmptyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C6AFB9B5252E354B00211710 = {
 			isa = PBXGroup;
 			children = (
@@ -230,7 +249,7 @@
 			children = (
 				C6AFB9C1252E354B00211710 /* AppDelegate.swift */,
 				C6AFB9C3252E354B00211710 /* SceneDelegate.swift */,
-				C61781B22551D983001FA01A /* Extensions */,
+				C663380125537789008AFBCF /* AdditonalFiles */,
 				C62ECEB4253E057C008F505E /* FirebaseServices */,
 				C62ECEB3253E02F9008F505E /* Models */,
 				C61781BA2551DAC7001FA01A /* ViewControllers */,
@@ -477,6 +496,7 @@
 				C6AFB9C4252E354B00211710 /* SceneDelegate.swift in Sources */,
 				C6BEB6C32551E04700576EED /* ShowAlert.swift in Sources */,
 				C62ECEA6253DFD2E008F505E /* PostCell.swift in Sources */,
+				C6633803255377A7008AFBCF /* EmptyView.swift in Sources */,
 				C62ECEB0253E02EA008F505E /* User.swift in Sources */,
 				C62ECEBA253E0626008F505E /* UserDatabaseSession.swift in Sources */,
 				C62ECEC0253E0E34008F505E /* Resource.swift in Sources */,

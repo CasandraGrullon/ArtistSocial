@@ -21,9 +21,10 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
-    
     public static let reuseIdentifier = "postCell"
     //TODO: configure cell populated with Post object details
-    
+    public func configureCell(post: Post) {
+        
+    }
     
 }
