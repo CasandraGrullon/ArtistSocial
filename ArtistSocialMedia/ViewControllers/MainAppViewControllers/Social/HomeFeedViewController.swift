@@ -35,7 +35,6 @@ class HomeFeedViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController.searchBar.isHidden = true
         configureSearchController()
         configureCollectionView()
         fetchFollowedUsers()
@@ -99,12 +98,11 @@ class HomeFeedViewController: UIViewController {
     }
     //MARK:- Button Actions
     @IBAction func searchNavButtonPressed(_ sender: UIBarButtonItem) {
-        //accountState = accountState == .existingUser ? .newUser : .existingUser
-        searchOn = searchOn == false ? true : false
-        searchController.searchBar.isHidden = searchOn
+        searchOn.toggle()        
     }
     @IBAction func addPostButtonPressed(_ sender: UIButton) {
         //go to add post view
+        
     }
 }
 //MARK:- CollectionView extensions

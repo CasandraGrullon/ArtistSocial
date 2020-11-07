@@ -79,6 +79,66 @@
             </objects>
             <point key="canvasLocation" x="320" y="-137"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="F1B-u3-neM">
+            <objects>
+                <viewController id="HN5-Li-noB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZjO-wA-ybc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="78D-sc-dnM">
+                                <rect key="frame" x="20" y="64" width="89.5" height="89.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="78D-sc-dnM" secondAttribute="height" multiplier="1:1" id="UD6-Sr-R6j"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="enter artsy thoughts here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0K8-Lv-knK">
+                                <rect key="frame" x="117.5" y="64" width="288.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ZAq-5l-o17"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGO-U1-wxm">
+                                <rect key="frame" x="346" y="172" width="60" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Tqt-OA-Nq7"/>
+                                    <constraint firstAttribute="height" constant="44" id="rQv-bg-Cxj"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Post"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5c-bT-aTx">
+                                <rect key="frame" x="117.5" y="172" width="24" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7f9-YS-gk6"/>
+                                </constraints>
+                                <state key="normal" image="photo" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ldt-d7-5b5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0K8-Lv-knK" firstAttribute="leading" secondItem="78D-sc-dnM" secondAttribute="trailing" constant="8" id="5ST-di-ee3"/>
+                            <constraint firstItem="Ldt-d7-5b5" firstAttribute="trailing" secondItem="IGO-U1-wxm" secondAttribute="trailing" constant="8" id="6eh-D1-e7x"/>
+                            <constraint firstItem="u5c-bT-aTx" firstAttribute="top" secondItem="0K8-Lv-knK" secondAttribute="bottom" constant="8" id="OFe-fG-lm8"/>
+                            <constraint firstItem="78D-sc-dnM" firstAttribute="top" secondItem="Ldt-d7-5b5" secondAttribute="top" constant="20" id="Q7m-Au-3yf"/>
+                            <constraint firstItem="u5c-bT-aTx" firstAttribute="leading" secondItem="78D-sc-dnM" secondAttribute="trailing" constant="8" id="aFh-B5-yPj"/>
+                            <constraint firstItem="IGO-U1-wxm" firstAttribute="top" secondItem="0K8-Lv-knK" secondAttribute="bottom" constant="8" id="bjn-Eg-1nh"/>
+                            <constraint firstItem="0K8-Lv-knK" firstAttribute="top" secondItem="Ldt-d7-5b5" secondAttribute="top" constant="20" id="cTT-o9-F12"/>
+                            <constraint firstItem="78D-sc-dnM" firstAttribute="leading" secondItem="Ldt-d7-5b5" secondAttribute="leading" constant="20" id="kiY-tf-RO5"/>
+                            <constraint firstItem="78D-sc-dnM" firstAttribute="height" secondItem="ZjO-wA-ybc" secondAttribute="height" multiplier="0.1" id="te1-5h-Jvv"/>
+                            <constraint firstItem="Ldt-d7-5b5" firstAttribute="trailing" secondItem="0K8-Lv-knK" secondAttribute="trailing" constant="8" id="yxb-j4-Hzu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLF-eH-9nR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044.9275362318842" y="-137.27678571428569"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="do6-f7-SYm">
             <objects>
@@ -198,6 +258,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="photo" catalog="system" width="128" height="93"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
